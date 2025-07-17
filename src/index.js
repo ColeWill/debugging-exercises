@@ -19,4 +19,8 @@ require('./controllers/usersController.js')(app, db);
 
 app.use('/', express.static(__dirname + '/public/'));
 
-app.listen(9000);
+app.listen(9000, ()=> {
+    console.log('server running on port 9000, navigate to http://www.getRANTR.com:9000/');
+}).on('error', (err)=> {
+    console.log('server error:', err);
+})
